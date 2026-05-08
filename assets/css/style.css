@@ -1,0 +1,668 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background:
+        linear-gradient(
+            135deg,
+            #fff5f5,
+            #ffeaea
+        );
+    color: #5b3d3d;
+    min-height: 100vh;
+}
+
+/* APP */
+
+.mobile {
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* HEADER */
+
+.header {
+    width: 100%;
+    padding: 24px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    border-bottom: 1px solid #f3dede;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    width: 95px;
+}
+
+/* CONTAINER */
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px 120px;
+}
+
+/* TITLES */
+
+.title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #9d4d4d;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 15px;
+    color: #9b7c7c;
+    margin-bottom: 30px;
+}
+
+/* INPUTS */
+
+.input-group {
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.input,
+.search,
+.textarea {
+    width: 100%;
+    border: 1px solid #ecd2d2;
+    background: white;
+    border-radius: 18px;
+    outline: none;
+    font-family: inherit;
+    transition: 0.2s;
+}
+
+.input,
+.search {
+    height: 56px;
+    padding: 0 18px;
+}
+
+.textarea {
+    height: 180px;
+    resize: none;
+    padding: 18px;
+}
+
+.input:focus,
+.search:focus,
+.textarea:focus {
+    border-color: #d88a8a;
+    box-shadow: 0 0 0 4px rgba(216,138,138,0.12);
+}
+
+/* BUTTONS */
+
+.button,
+.button-link {
+    width: 100%;
+    height: 56px;
+    border: none;
+    border-radius: 18px;
+    background:
+        linear-gradient(
+            135deg,
+            #cf7c7c,
+            #b45b5b
+        );
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 12px;
+    transition: 0.2s;
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button:hover,
+.button-link:hover {
+    transform: translateY(-2px);
+    opacity: 0.96;
+}
+
+.button-outline,
+.button-outline-link {
+    width: 100%;
+    height: 56px;
+    border-radius: 18px;
+    border: 1px solid #e7c7c7;
+    background: white;
+    color: #9d4d4d;
+    font-weight: 500;
+    font-size: 15px;
+    margin-top: 12px;
+    cursor: pointer;
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.2s;
+}
+
+.button-outline:hover,
+.button-outline-link:hover {
+    background: #fff5f5;
+}
+
+/* SEARCH */
+
+.search {
+    margin-bottom: 24px;
+}
+
+/* GRID */
+
+.cards {
+    display: grid;
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(320px, 1fr)
+        );
+    gap: 20px;
+}
+
+/* CARD */
+
+.card {
+    background: white;
+    border-radius: 24px;
+    padding: 22px;
+    border: 1px solid #f1dede;
+    box-shadow:
+        0 8px 30px rgba(0,0,0,0.04);
+
+    transition: 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.tag {
+    background: #ffe6e6;
+    color: #b75c5c;
+    padding: 7px 14px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.message {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #6d5252;
+}
+
+.date {
+    margin-top: 18px;
+    font-size: 12px;
+    color: #a18c8c;
+    text-align: right;
+}
+
+/* USERS */
+
+.user-list {
+    display: grid;
+    gap: 16px;
+}
+
+.user-item {
+    background: white;
+    border-radius: 22px;
+    padding: 18px;
+    border: 1px solid #f0dede;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background:
+        linear-gradient(
+            135deg,
+            #d88a8a,
+            #b45b5b
+        );
+}
+
+/* NAVBAR */
+
+.navbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 75px;
+
+    background: rgba(255,255,255,0.9);
+
+    backdrop-filter: blur(12px);
+
+    border-top: 1px solid #f1dede;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+
+    z-index: 100;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #9d4d4d;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.nav-item:hover {
+    color: #b45b5b;
+}
+
+/* MENU */
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: -280px;
+
+    width: 280px;
+    height: 100vh;
+
+    background: white;
+
+    z-index: 999;
+
+    padding: 30px;
+
+    transition: 0.3s;
+
+    box-shadow:
+        10px 0 40px rgba(0,0,0,0.08);
+}
+
+.menu.active {
+    left: 0;
+}
+
+.menu a {
+    display: block;
+    margin-bottom: 22px;
+    text-decoration: none;
+    color: #9d4d4d;
+    font-weight: 500;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0,0,0,0.35);
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: 0.3s;
+
+    z-index: 998;
+}
+
+.overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .container {
+        padding: 20px 16px 120px;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .navbar {
+        gap: 24px;
+    }
+
+}
+
+/* ... mantenha o código anterior e adicione/ajuste estas partes ... */
+
+/* Ajuste no botão de favorito para funcionar com o JS */
+.card-top button {
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: #ccc; 
+    transition: 0.2s;
+}
+
+.card-top button.active {
+    color: #f1c40f; /* Dourado para favorito */
+    transform: scale(1.2);
+}
+
+/* Garante que o menu e overlay funcionem */
+.menu {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    width: 280px;
+    height: 100vh;
+    background: white;
+    z-index: 999;
+    padding: 30px;
+    transition: 0.3s;
+    box-shadow: 10px 0 40px rgba(0,0,0,0.08);
+}
+
+.menu.active {
+    left: 0;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+    z-index: 998;
+}
+
+.overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.header {
+    width: 100%;
+    padding: 24px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    background: white;
+
+    border-bottom: 1px solid #f3dede;
+}
+
+.menu-btn {
+
+    position: absolute;
+    left: 20px;
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #fff0f3;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    color: #b45b5b;
+
+    transition: 0.2s;
+}
+
+.menu-btn:hover {
+    background: #ffe4ea;
+}
+
+.topbar {
+
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    margin-bottom: 24px;
+}
+
+.back-btn {
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #fff0f3;
+
+    color: #b45b5b;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.back-btn:hover {
+    background: #ffe4ea;
+}
+
+.topbar-title {
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    color: #9d4d4d;
+}
+
+/* Botões de ação na lista de usuários */
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.options-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #9d4d4d;
+    cursor: pointer;
+}
+
+/* Layout da Página de Informações (Figma) */
+.info-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.heart-avatar {
+    width: 100px;
+    height: 100px;
+    background: white;
+    border: 2px solid #ecd2d2;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Duas colunas */
+    gap: 15px;
+}
+
+.full-width {
+    grid-column: span 2; /* Ocupa as duas colunas */
+}
+
+.info-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: #9d4d4d;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+
+.info-field {
+    background: white;
+    border: 1px solid #ecd2d2;
+    border-radius: 12px;
+    padding: 12px 15px;
+    font-size: 14px;
+    color: #5b3d3d;
+    min-height: 45px;
+    display: flex;
+    align-items: center;
+}
+
+/* Campo de envio na Home */
+.send-message-container {
+    background: white;
+    border-radius: 20px;
+    padding: 15px;
+    border: 1px solid #f3dede;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(157, 77, 77, 0.05);
+}
+
+.feed-textarea {
+    width: 100%;
+    height: 80px;
+    border: none;
+    resize: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #5b3d3d;
+    outline: none;
+}
+
+.send-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    border-top: 1px solid #fff5f5;
+    padding-top: 10px;
+}
+
+.char-count {
+    font-size: 12px;
+    color: #bc8282;
+}
+
+.send-btn {
+    background: #9d4d4d;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.send-btn:hover {
+    background: #b45b5b;
+}
+
+/* Opções de envio (Para e Privacidade) */
+.send-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 15px;
+    padding: 0 5px;
+}
+
+.option-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.option-group label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #9d4d4d;
+    text-transform: uppercase;
+}
+
+.select-field {
+    background: #fff5f5;
+    border: 1px solid #f3dede;
+    border-radius: 10px;
+    padding: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    color: #5b3d3d;
+    outline: none;
+    cursor: pointer;
+}
+
+.select-field:focus {
+    border-color: #cf7c7c;
+}
+
