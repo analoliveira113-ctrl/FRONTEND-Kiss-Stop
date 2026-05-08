@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Kiss Stop</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <body>
+    <div id="side-menu" class="side-menu" style="display: none; position: fixed; top: 0; left: 0; width: 250px; height: 100%; background: white; z-index: 1000; box-shadow: 2px 0 5px rgba(0,0,0,0.2); padding: 20px;">
+        <button onclick="closeMenu()" style="background: none; border: none; font-size: 24px; cursor: pointer;">×</button>
+        <nav style="display: flex; flex-direction: column; gap: 20px; margin-top: 30px;">
+            <a href="home.html" style="text-decoration: none; color: #9d4d4d; font-weight: bold;">🏠 Home</a>
+            <a href="usuarios.html" style="text-decoration: none; color: #9d4d4d; font-weight: bold;">👤 Usuários</a>
+            <a href="favoritos.html" style="text-decoration: none; color: #9d4d4d; font-weight: bold;">⭐ Favoritos</a>
+            <a href="recebidos.html" style="text-decoration: none; color: #9d4d4d; font-weight: bold;">💌 Recebidos</a>
+            <a href="perfil.html" style="text-decoration: none; color: #9d4d4d; font-weight: bold;">⚙️ Perfil</a>
+            <hr>
+            <a href="index.html" style="text-decoration: none; color: gray;">Sair</a>
+        </nav>
+    </div>
+
+    <div id="overlay" onclick="closeMenu()" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 999;"></div>
+
+    <div class="header">
+        <button class="menu-btn" onclick="openMenu()">☰</button>
+        <img src="assets/img/logo.png" class="logo" alt="Logo Kiss Stop">
+    </div>
+
+    <div class="container">
+            <h1 class="title">Feed Público</h1>
+            
+            <div class="send-message-container">
+                <textarea class="feed-textarea" placeholder="O que você está pensando?"></textarea>
+                
+                <div class="send-options">
+                    <div class="option-group">
+                        <label>Para:</label>
+                        <select id="send-to" class="select-field">
+                            <option value="todos">Todos</option>
+                            <option value="caroline">Caroline Dias</option>
+                            <option value="giovanna">Giovanna Mendonça</option>
+                            <option value="ana">Ana Laura</option>
+                        </select>
+                    </div>
+
+                    <div class="option-group">
+                        <label>Privacidade:</label>
+                        <select id="visibility" class="select-field">
+                            <option value="publico">🌍 Público</option>
+                            <option value="privado">🔒 Privado</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="send-actions">
+                    <span style="font-size: 10px; color: #bc8282;">Respeite as regras da comunidade</span>
+                    <button class="send-btn" onclick="postMessage()">Enviar</button>
+                </div>
+            </div>
+
+            <div id="feed">
+                <div class="card">
+                    <div class="card-top">
+                        <span class="tag">🌍 De: Anônimo para: Todos</span>
+                        <button class="options-btn" onclick="favorite(this)">☆</button>
+                    </div>
+                    <div class="message">“Você tem um sorriso lindo e um olhar incrível.”</div>
+                    <div class="date">Há 5 min</div>
+                </div>
+
+                <div class="card">
+                    <div class="card-top">
+                        <span class="tag">🌍 De: Lucas para: Caroline</span>
+                        <button class="options-btn" onclick="favorite(this)">☆</button>
+                    </div>
+                    <div class="message">“Alguém daqui claramente gosta muito de você 👀”</div>
+                    <div class="date">Há 20 min</div>
+                </div>
+
+                <div class="card">
+                    <div class="card-top">
+                        <span class="tag">🌍 De: Anônimo para: Giovanna</span>
+                        <button class="options-btn" onclick="favorite(this)">☆</button>
+                    </div>
+                    <div class="message">“Adorei te conhecer no intervalo hoje!”</div>
+                    <div class="date">Há 1 hora</div>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
