@@ -24,7 +24,7 @@ async function realizarCadastro() {
             
         } else {
             const data = await response.json();
-            alert("❌ Erro: " + data.message);
+            alert("❌ Erro: " + (data.error || data.message || JSON.stringify(data)));
         }
     } catch (error) {
         alert("⚠️ Erro de conexão com o servidor.");
