@@ -8,7 +8,7 @@ async function realizarCadastro() {
     const senha = document.getElementById('senha').value;
 
     try {
-        const response = await fetch('http://localhost:3000/api/perfis/cadastro', {
+        const response = await fetch('https://backend-kiss-stop.vercel.app/api/perfis/cadastro', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ nome, email, senha })
@@ -115,7 +115,7 @@ async function postMessage() {
     };
 
     try {
-        const response = await fetch('http://localhost:3000/api/mensagens/postar', {
+        const response = await fetch('https://backend-kiss-stop.vercel.app/api/mensagens/postar', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(dados)
