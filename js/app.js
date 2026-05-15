@@ -129,6 +129,111 @@ async function postMessage() {
         console.error("Erro ao postar:", error);
     }
 }
+// ... suas funções anteriores (realizarCadastro, favorite, carregarFavoritos, etc) ...
+
+// --- NOVA FUNÇÃO: GERADOR DE CANTADAS COM IA ---
+function gerarCantadaIA() {
+    const textarea = document.getElementById('mensagem-texto');
+    const btn = document.querySelector('.ai-btn');
+
+    // Lista de cantadas prontas (o cérebro do cupido)
+    const cantadas = [
+        "Uai, ocê não é pescaria, mas fisgou meu coração de jeito, sô!",
+        "Ocê é mais bonita que o nascer do sol lá na roça.",
+        "Se ocê fosse um cafézinho coado na hora, eu bebia num gole só pra esquentar o peito.",
+        "Ô lindeza, meu amor por você é igual capim gordura: cresce em qualquer lugar e ninguém arranca!",
+        "Ocê não é espantalho, mas espantou a solidão da minha vida.",
+        "Tô mais perdido que cachorro em dia de mudança, querendo achar o caminho do seu coração.",
+        "Seu sorriso brilha mais que pirilampo em noite de lua cheia.",
+        "Ocê é o doce de leite que faltava no meu queijo minas!",
+        "Não sou carro de boi, mas por ocê eu faço um barulhão de saudade.",
+        "Vamo fazer igual festa junina? Eu sou a fogueira e ocê o meu quentão!"
+    ];
+
+    btn.innerText = "🤠 Buscando no curral...";
+    btn.disabled = true;
+
+    // Simula um "carregamento" de 800ms para parecer que a IA está pensando
+    setTimeout(() => {
+        const sorteio = Math.floor(Math.random() * cantadas.length);
+        textarea.value = cantadas[sorteio];
+        
+        btn.innerText = "🤠 Dica do Cupido Caipira (IA)";
+        btn.disabled = false;
+    }, 800);
+}
+
+let filaPosicao = 0;
+let emAtendimento = false;
+
+function entrarNaFila() {
+    const btn = document.getElementById('btn-fila');
+    const contagem = document.getElementById('contagem-fila');
+    const status = document.getElementById('status-fila');
+
+    if (emAtendimento) return;
+
+    // Simula entrada na fila
+    filaPosicao = Math.floor(Math.random() * 5) + 1; 
+    btn.disabled = true;
+    btn.style.background = "gray";
+    btn.innerText = "Você está na fila...";
+    
+    atualizarFila();
+}
+
+function atualizarFila() {
+    const contagem = document.getElementById('contagem-fila');
+    const status = document.getElementById('status-fila');
+
+    const intervalo = setInterval(() => {
+        if (filaPosicao > 0) {
+            contagem.innerText = filaPosicao;
+            status.innerText = `Sua vez em breve! Faltam ${filaPosicao} pessoas.`;
+            filaPosicao--;
+        } else {
+            clearInterval(intervalo);
+            iniciarAtendimento();
+        }
+    }, 3000); // A cada 3 segundos a fila anda
+}
+
+function iniciarAtendimento() {
+    emAtendimento = true;
+    document.getElementById('chat-beijo').style.display = "block";
+    document.getElementById('status-fila').innerText = "🔥 É A SUA VEZ! 🔥";
+    document.getElementById('btn-fila').innerText = "Finalizar Momento";
+    document.getElementById('btn-fila').disabled = false;
+    document.getElementById('btn-fila').style.background = "#9d4d4d";
+    document.getElementById('btn-fila').onclick = finalizarAtendimento;
+
+    const msgContainer = document.getElementById('mensagens-chat');
+    msgContainer.innerHTML = "<p><b>Barraca:</b> Olá, lindeza! O horário tá agendado. Preparado(a)? 😉</p>";
+}
+
+function finalizarAtendimento() {
+    alert("Agendamento finalizado! Esperamos que tenha sido bão demais!");
+    location.reload(); // Reseta a fila
+}
+
+// --- LOGICA LGPD CAIPIRA ---
+
+// Verifica se já aceitou os termos ao carregar a página
+window.onload = function() {
+    if (!localStorage.getItem('lgpd_aceito')) {
+        document.getElementById('lgpd-baú').style.display = 'block';
+    }
+}
+
+function aceitarTermos() {
+    localStorage.setItem('lgpd_aceito', 'true');
+    document.getElementById('lgpd-baú').style.display = 'none';
+    console.log("Usuário aceitou o baú de dados.");
+}
+
+function recusarTermos() {
+    alert("Uai, se não aceitar, o delegado da festa não deixa ocê navegar direito!");
+}
 
 // Verifica se a página terminou de carregar para rodar os favoritos apenas se o container existir
 document.addEventListener('DOMContentLoaded', carregarFavoritos);
